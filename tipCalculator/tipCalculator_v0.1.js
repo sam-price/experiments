@@ -9,8 +9,10 @@ function tipCalculator() {
   tipRate = prompt(tipRate);
 
   // convert the bill to a float and round to 2 decimal places
-  billAmount = parseFloat(billAmount);
-  billAmount = round(billAmount, 2);
+  // billAmount = parseFloat(billAmount);
+  // billAmount = round(billAmount, 2);
+  // showBill = billAmount.toFixed(2);
+  billAmount = billCalc(billAmount);
   showBill = billAmount.toFixed(2);
   document.write("Bill: £" + showBill + "</br>");
 
@@ -32,6 +34,14 @@ function tipCalculator() {
 // function to round up to 'x' decimal place
 function round(value, decimals) {
   return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
+}
+
+// function to push bill to float
+// should add the tip into this as well and combine them into one
+function billCalc(num) {
+  num = parseFloat(num);
+  num = round(num, 2);
+  return num;
 }
 
 tipCalculator();
